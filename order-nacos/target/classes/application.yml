@@ -1,0 +1,14 @@
+server:
+  port: 8010
+
+# 应用名称(nacos会将改名称当作服务名称)
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.99.136.166:8848
+        namespace: f1db8668-8a38-44ce-80ab-22aaa453bbe8
+        username: aa
+        password: aa

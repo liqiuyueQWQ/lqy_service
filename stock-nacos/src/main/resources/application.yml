@@ -1,0 +1,14 @@
+server:
+  port: 8015
+
+# 应用名称(nacos会将改名称当作服务名称)
+spring:
+  application:
+    name: stock-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.99.136.166:8848
+        namespace: 6baa3366-b932-4a10-b70a-efc2fd1dd55b
+        username: nacos
+        password: nacos
