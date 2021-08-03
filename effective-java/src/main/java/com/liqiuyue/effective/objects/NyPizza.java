@@ -1,0 +1,47 @@
+package com.liqiuyue.effective.objects;
+
+import com.alibaba.fastjson.JSON;
+
+import java.util.Objects;
+
+/**
+ * @ClassName: NyPizza
+ * @Description:
+ * @Author: liqiuyue
+ * @Date: 2021-08-03
+ */
+public class NyPizza extends Pizza {
+
+    public enum Size {SMALL, MEDIUM, LARGE}
+
+    private final Size size;
+
+    public static class Builder extends Pizza.Builder<Builder> {
+
+        private final Size size;
+
+        public Builder(Size size) {
+            this.size = Objects.requireNonNull(size);
+        }
+
+        @Override
+        public NyPizza build() {
+            return new NyPizza(this);
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
+    }
+
+
+    private NyPizza(Builder builder) {
+        super(builder);
+        size=builder.size;
+    }
+
+    public static void main(String[] args) {
+        NyPizza pizza = new NyPizza.Builder(Size.SMALL).addTopping(Topping.SAUSAGE).build();
+    }
+}

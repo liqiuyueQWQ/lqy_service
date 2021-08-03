@@ -5,6 +5,7 @@
     <modules>
         <module>order-nacos</module>
         <module>stock-nacos</module>
+        <module>effective-java</module>
     </modules>
     <groupId>com.lqy.springcloud</groupId>
     <artifactId>cloudalibaba</artifactId>
