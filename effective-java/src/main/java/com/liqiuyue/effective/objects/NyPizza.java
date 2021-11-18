@@ -1,7 +1,5 @@
 package com.liqiuyue.effective.objects;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.Objects;
 
 /**

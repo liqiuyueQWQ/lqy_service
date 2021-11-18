@@ -1,5 +1,6 @@
 package com.liqiuyue.order.controller;
 
+import com.liqiuyue.order.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +18,15 @@ import org.springframework.web.client.RestTemplate;
 public class OrderController {
 
     @Autowired
+    private StockFeignService stockFeignService;
+
+    @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("/add")
     public String add(){
         System.out.println("下单成功");
-        String msg = restTemplate.getForObject("http://stock-service/stock/reduce", String.class);
-        return msg;
+        String reduce = stockFeignService.reduce();
+        return reduce;
     }
 }

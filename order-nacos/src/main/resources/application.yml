@@ -9,6 +9,22 @@ spring:
     nacos:
       discovery:
         server-addr: 39.99.136.166:8848
-        namespace: 6baa3366-b932-4a10-b70a-efc2fd1dd55b
+        namespace: public
         username: nacos
         password: nacos
+
+# springboot 默认的日志级别是info,feign的debug日志就不会输入
+logging:
+  level:
+    com.liqiuyue.order.feign: debug
+
+# 局部配置
+feign:
+  client:
+    config:
+      stock-service:
+        loggerLevel: FULL
+#        contract: feign.Contract.Default
+        connectTimeout: 5000
+        readTimeout: 3000
+        requestInterceptors[0]: com.liqiuyue.order.interceptor.feign.CustomerFeignInterceptor

@@ -2,6 +2,7 @@ package com.liqiuyue.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @ClassName: OrderApplication
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2021-07-05
  */
 @SpringBootApplication
+@EnableFeignClients
 public class OrderApplication {
 
     public static void main(String[] args) {
