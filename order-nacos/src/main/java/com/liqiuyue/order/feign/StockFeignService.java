@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
  * path 指定调用rest接口所在的StockController指定的@RequestMapping
  *
  * 底层：动态代理
+ *
+ * name 不能被多次使用 一个服务对应一个feign
  * @author liqiuyue
  */
 @FeignClient(name = "stock-service",path = "/stock")
