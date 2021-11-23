@@ -352,5 +352,4 @@ feign:
         # 读取超时时间
         readTimeout: 3000
 ```
-test
 
