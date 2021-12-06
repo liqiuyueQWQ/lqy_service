@@ -8,6 +8,7 @@
         <module>stock-nacos</module>
         <module>effective-java</module>
         <module>arithmetic</module>
+        <module>config_nacos</module>
     </modules>
 
     <groupId>com.lqy.springcloud</groupId>
