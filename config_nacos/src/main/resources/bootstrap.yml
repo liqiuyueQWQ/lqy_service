@@ -1,11 +1,15 @@
+# 应用名称(nacos会将改名称当作服务名称)
 spring:
   application:
-    name: config_nacos
+    name: com.lqy.nacos_config
   cloud:
     nacos:
-      discovery:
-        server-addr: 39.99.136.166:8848
+      config:
+        # 非properties文件 需要使用(默认properties)
+        file-extension: yaml
         namespace: 96ac4ca0-9c69-49a3-b4b2-5e0367e47e4b
+        server-addr: 39.99.136.166:8848
         username: visitor
         password: 123456
-
+  profiles:
+    active: dev

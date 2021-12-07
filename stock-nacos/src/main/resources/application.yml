@@ -7,8 +7,7 @@ spring:
     name: stock-service
   cloud:
     nacos:
-      discovery:
-        server-addr: 39.99.136.166:8848
-        namespace: 96ac4ca0-9c69-49a3-b4b2-5e0367e47e4b
-        username: visitor
-        password: 123456
+      server-addr: 39.99.136.166:8848
+      namespace: 96ac4ca0-9c69-49a3-b4b2-5e0367e47e4b
+      username: nacos
+      password: nacos
