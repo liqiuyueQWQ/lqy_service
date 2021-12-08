@@ -9,5 +9,4 @@
 rebel.xml
 rebel-remote.xml
 target
-/src/test
 *.DS_Store

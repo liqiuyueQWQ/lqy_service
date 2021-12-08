@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * config启动类
  *
@@ -21,6 +23,7 @@ public class ConfigApplication {
         String userName = environment.getProperty("user.name");
         String age = environment.getProperty("user.age");
         System.out.println("user name:" + userName + "----->age:" + age);
+        TimeUnit.SECONDS.sleep(1);
     }
 
 }

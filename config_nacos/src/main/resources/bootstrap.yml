@@ -2,6 +2,8 @@
 spring:
   application:
     name: com.lqy.nacos_config
+  profiles:
+    active: dev
   cloud:
     nacos:
       config:
@@ -11,5 +13,3 @@ spring:
         server-addr: 39.99.136.166:8848
         username: visitor
         password: 123456
-  profiles:
-    active: dev
