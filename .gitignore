@@ -10,3 +10,4 @@ rebel.xml
 rebel-remote.xml
 target
 *.DS_Store
+/stock-nacos/target/
