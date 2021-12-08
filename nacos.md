@@ -15,7 +15,7 @@
    ```
 
    [最新稳定版本](https://github.com/alibaba/nacos/releases)
-   
+
 3. 启动nacos
 
    ```shell
@@ -80,24 +80,26 @@ spring:
 
 | 配置项                | Key                                              | 默认值                       | 说明                                                         |
 | --------------------- | ------------------------------------------------ | ---------------------------- | ------------------------------------------------------------ |
-| 服务端地址          | spring.cloud.nacos.discovery.server-addr       | 无                         | Nacos Server 启动监听的ip地址和端口                        |
-| 服务名              | spring.cloud.nacos.discovery.service           | ${spring.application.name} | 给当前的服务命名                                           |
-| 服务分组            | spring.cloud.nacos.discovery.group             | DEFAULT_GROUP              | 设置服务所处的分组                                         |
-| 权重                | spring.cloud.nacos.discovery.weight            | 1                          | 取值范围 1 到 100，数值越大，权重越大                      |
-| 网卡名              | spring.cloud.nacos.discovery.network-interface | 无                         | 当IP未配置时，注册的IP为此网卡所对应的IP地址，如果此项也未配置，则默认取第一块网卡的地址 |
-| 注册的IP地址        | spring.cloud.nacos.discovery.ip                | 无                         | 优先级最高                                                 |
-| 注册的端口          | spring.cloud.nacos.discovery.port              | -1                         | 默认情况下不用配置，会自动探测                             |
-| 命名空间            | spring.cloud.nacos.discovery.namespace         | 无                         | 常用场景之一是不同环境的注册的区分隔离，例如开发测试环境和生产环境的资源（如配置、服务）隔离等。 |
-| AccessKey           | spring.cloud.nacos.discovery.access-key        | 无                         | 当要上阿里云时，阿里云上面的一个云账号名                   |
-| SecretKey           | spring.cloud.nacos.discovery.secret-key        | 无                         | 当要上阿里云时，阿里云上面的一个云账号密码                 |
-| Metadata            | spring.cloud.nacos.discovery.metadata          | 无                         | 使用Map格式配置，用户可以根据自己的需要自定义一些和服务相关的元数据信息 |
-| 日志文件名          | spring.cloud.nacos.discovery.log-name          | 无                         |                                                              |
-| 集群                | spring.cloud.nacos.discovery.cluster-name      | DEFAULT                    | 配置成Nacos集群名称                                        |
-| 接入点              | spring.cloud.nacos.discovery.enpoint           | UTF-8                      | 地域的某个服务的入口域名，通过此域名可以动态地拿到服务端地址 |
-| 是否集成Ribbon      | ribbon.nacos.enabled                           | true                       | 一般都设置成true即可                                       |
-| 是否开启Nacos Watch | spring.cloud.nacos.discovery.watch.enabled     | true                       | 可以设置成false来关闭 watch                                |
+| `服务端地址`          | `spring.cloud.nacos.discovery.server-addr`       | `无`                         | `Nacos Server 启动监听的ip地址和端口`                        |
+| `服务名`              | `spring.cloud.nacos.discovery.service`           | `${spring.application.name}` | `给当前的服务命名`                                           |
+| `服务分组`            | `spring.cloud.nacos.discovery.group`             | `DEFAULT_GROUP`              | `设置服务所处的分组`                                         |
+| `权重`                | `spring.cloud.nacos.discovery.weight`            | `1`                          | `取值范围 1 到 100，数值越大，权重越大`                      |
+| `网卡名`              | `spring.cloud.nacos.discovery.network-interface` | `无`                         | `当IP未配置时，注册的IP为此网卡所对应的IP地址，如果此项也未配置，则默认取第一块网卡的地址` |
+| `注册的IP地址`        | `spring.cloud.nacos.discovery.ip`                | `无`                         | `优先级最高`                                                 |
+| `注册的端口`          | `spring.cloud.nacos.discovery.port`              | `-1`                         | `默认情况下不用配置，会自动探测`                             |
+| `命名空间`            | `spring.cloud.nacos.discovery.namespace`         | `无`                         | `常用场景之一是不同环境的注册的区分隔离，例如开发测试环境和生产环境的资源（如配置、服务）隔离等。` |
+| `AccessKey`           | `spring.cloud.nacos.discovery.access-key`        | `无`                         | `当要上阿里云时，阿里云上面的一个云账号名`                   |
+| `SecretKey`           | `spring.cloud.nacos.discovery.secret-key`        | `无`                         | `当要上阿里云时，阿里云上面的一个云账号密码`                 |
+| `Metadata`            | `spring.cloud.nacos.discovery.metadata`          | `无`                         | `使用Map格式配置，用户可以根据自己的需要自定义一些和服务相关的元数据信息` |
+| `日志文件名`          | `spring.cloud.nacos.discovery.log-name`          | `无`                         |                                                              |
+| `集群`                | `spring.cloud.nacos.discovery.cluster-name`      | `DEFAULT`                    | `配置成Nacos集群名称`                                        |
+| `接入点`              | `spring.cloud.nacos.discovery.enpoint`           | `UTF-8`                      | `地域的某个服务的入口域名，通过此域名可以动态地拿到服务端地址` |
+| `是否集成Ribbon`      | `ribbon.nacos.enabled`                           | `true`                       | `一般都设置成true即可`                                       |
+| `是否开启Nacos Watch` | `spring.cloud.nacos.discovery.watch.enabled`     | `true`                       | `可以设置成false来关闭 watch`                                |
 
 #### 雪崩保护
+
+
 
 ### NACOS集群搭建(ecs配置太低 选择性放弃启用(无奈放弃 配置太低后续windows电脑加内存条买虚拟机在搞))
 
@@ -330,7 +332,6 @@ public class CustomerFeignInterceptor implements RequestInterceptor {
       requestTemplate.uri("/10");
       logger.info("feign拦截器!");
     }
-
 }
 ```
 
@@ -352,4 +353,134 @@ feign:
         # 读取超时时间
         readTimeout: 3000
 ```
+
+## nacos config
+
+1. 引入pom
+
+   ```xml
+   <!-- nacos config -->
+   <dependency>
+     <groupId>com.alibaba.cloud</groupId>
+     <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+   </dependency>
+   ```
+2. 创建bootstrap.yml(properties)配置文件
+
+   ```yml
+   # 应用名称(nacos会将改名称当作服务名称)
+   spring:
+     application:
+       # 和data id保持一致
+       name: com.lqy.nacos_config
+     cloud:
+       nacos:
+         config:
+           server-addr: 39.99.136.166:8848
+           namespace: 96ac4ca0-9c69-49a3-b4b2-5e0367e47e4b
+           username: visitor
+           password: 123456
+           # 非properties文件 需要使用(默认properties)
+           file-extension: yaml
+   ```
+
+3. 读取配置文件
+
+   ```java
+   public static void main(String[] args) {
+           ConfigurableApplicationContext applicationContext = SpringApplication.run(ConfigApplication.class, args);
+           ConfigurableEnvironment environment = applicationContext.getEnvironment();
+           String userName = environment.getProperty("user.name");
+           String age = environment.getProperty("user.age");
+           System.out.println("user name:" + userName + "----->age:" + age);
+       }
+   ```
+
+   ![image-20211207192504511](/Users/liqiuyue/Library/Application Support/typora-user-images/image-20211207192504511.png)
+
+   > 支持配置动态更新
+
+   ```java
+   public static void main(String[] args) throws InterruptedException{
+           ConfigurableApplicationContext applicationContext = SpringApplication.run(ConfigApplication.class, args);
+           while(true){
+             ConfigurableEnvironment environment = applicationContext.getEnvironment();
+             String userName = environment.getProperty("user.name");
+             String age = environment.getProperty("user.age");
+             System.out.println("user name:" + userName + "----->age:" + age);
+             TimeUnit.SECONDS.sleep(1);
+           }
+       }
+   ```
+   ```yaml
+   spring:
+     cloud:
+       nacos:
+         config:
+           #关闭动态刷新
+           refresh-enabled: false
+   ```
+
+4. profile
+
+   ```yaml
+   # 应用名称(nacos会将改名称当作服务名称)
+   spring:
+     application:
+       name: com.lqy.nacos_config
+     profiles:
+       active: dev
+       # 读取data id位com.lqy.nacos_config-dev的文件
+       # 不存在读取com.lqy.nacos_config 
+       # 优先级: xxx-dev > xxx
+   ```
+
+5. group
+
+   ```yaml
+   spring:
+     cloud:
+       nacos:
+         config:
+           # 默认DEFAULT_GROUP
+           group: DEFAULT_GROUP
+   ```
+
+6. 自定义扩展data id
+
+   ```properties
+   spring.application.name=opensource-service-provider
+   spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+   
+   # config external configuration
+   # 1、Data Id 在默认的组 DEFAULT_GROUP,不支持配置的动态刷新
+   spring.cloud.nacos.config.extension-configs[0].data-id=ext-config-common01.properties
+   
+   # 2、Data Id 不在默认的组，不支持动态刷新
+   spring.cloud.nacos.config.extension-configs[1].data-id=ext-config-common02.properties
+   spring.cloud.nacos.config.extension-configs[1].group=GLOBALE_GROUP
+   
+   # 3、Data Id 既不在默认的组，也支持动态刷新
+   spring.cloud.nacos.config.extension-configs[2].data-id=ext-config-common03.properties
+   spring.cloud.nacos.config.extension-configs[2].group=REFRESH_GROUP
+   # 是否动态刷新，默认 false
+   spring.cloud.nacos.config.extension-configs[2].refresh=true
+   # spring.cloud.nacos.config.extension-configs[n].data-id 其中 n 的值越大，优先级越高。
+   ```
+
+   ```properties
+   #共享data id
+   # 配置支持共享的 Data Id
+   spring.cloud.nacos.config.shared-configs[0].data-id=common.yaml
+   
+   # 配置 Data Id 所在分组，缺省默认 DEFAULT_GROUP
+   spring.cloud.nacos.config.shared-configs[0].group=GROUP_APP1
+   
+   # 配置Data Id 在配置变更时，是否动态刷新，缺省默认 false
+   spring.cloud.nacos.config.shared-configs[0].refresh=true
+   ```
+
+   > 优先级: application name + profile > extension > share 
+
+   
 
