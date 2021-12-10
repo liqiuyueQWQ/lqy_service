@@ -1,8 +1,6 @@
 package com.liqiuyue.effective.di;
 
 import java.util.Objects;
-import java.util.WeakHashMap;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @ClassName: SpellChecker
