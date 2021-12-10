@@ -482,5 +482,16 @@ feign:
 
    > 优先级: application name + profile > extension > share 
 
+
+7. RefreshScope
+
+   ```java
+   // 开启动态刷新 每次更新值都可以使用value注解获取
+   @RefreshScope
+   	
+   	// 只能读取到启动项目时的值
+   	@Value("${user.name}")
+   	public String userName;
+   ```
    
 
