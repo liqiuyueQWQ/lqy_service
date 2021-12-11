@@ -16,7 +16,7 @@ public class Test {
         StaticWay instance = StaticWay.getInstance();
         instance.score = "20";
         StaticWay instance1 = StaticWay.getInstance();
-        System.out.println(instance1.score); 
+        System.out.println(instance1.score);
     }
 
 }
