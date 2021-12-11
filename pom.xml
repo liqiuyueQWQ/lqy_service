@@ -9,6 +9,7 @@
         <module>effective-java</module>
         <module>arithmetic</module>
         <module>config_nacos</module>
+        <module>practice</module>
     </modules>
 
     <groupId>com.lqy.springcloud</groupId>
