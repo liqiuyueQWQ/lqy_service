@@ -8,9 +8,10 @@ package com.liqiuyue.effective.createdelete;
 public class Adult {
 
     public static void main(String[] args) throws Exception {
-//        adult();
-
         teenager();
+        System.out.println("-------------");
+        adult();
+
     }
 
     static void adult() throws Exception{
